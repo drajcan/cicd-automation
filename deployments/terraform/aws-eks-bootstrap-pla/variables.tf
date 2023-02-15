@@ -209,3 +209,8 @@ variable "grafana_azuread_auth_client_secret" {
   sensitive   = true
   default     = null
 }
+
+variable "monitoring_enabled" {
+  type    = bool
+  default = false
+}
