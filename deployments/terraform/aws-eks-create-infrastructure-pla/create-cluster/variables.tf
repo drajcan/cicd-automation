@@ -35,6 +35,15 @@ variable "eks_aws_auth_roles" {
   }))
   default = []
 }
+variable "eks_aws_auth_users" {
+  description = "Additional IAM roles to add to the aws-auth configmap. See https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/19.4.0#input_aws_auth_roles"
+  type = list(object({
+    userarn  = string
+    username = string
+    groups   = list(string)
+  }))
+  default = []
+}
 variable "vpc_single_nat_gateway" {
   type        = bool
   default     = false
