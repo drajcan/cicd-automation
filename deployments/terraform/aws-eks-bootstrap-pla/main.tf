@@ -73,6 +73,8 @@ module "bundle_eks_storage" {
 # 4. Monitoring components
 #
 module "bundle_monitoring" {
+  count = var.monitoring_enabled ? 1 : 0
+    
   depends_on = [
     module.bundle_eks_essentials,
     module.bundle_eks_storage
